@@ -96,7 +96,7 @@ const stage1East = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
     instructions : 'You see a Island in the distance do you want to explore it?',
-    image: './images/stage2East.png',
+    image: './images/stage1East.png',
     choices :[
         {text: 'Pass', nextStage: stage2EastPass},
         {text: 'Explore it', nextStage: stage2EastExploreIt},
@@ -109,7 +109,7 @@ const stage1West = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
     instructions : 'You see an unmarked ship in the distance do you want to attack it?',
-    image: './images/stage0-image.png',
+    image: './images/stage1West-new.png',
     choices :[
         {text: 'Pass', nextStage: stage2WestPass},
         {text: 'Attack', nextStage: stage2WestAttack},
