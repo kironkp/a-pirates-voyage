@@ -1,7 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
 
-
+// Stages:
 const stage3WestPassSing = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
@@ -22,8 +22,6 @@ const stage3WestPassNo = {
     
 }
 
-
-
 const stage3EastPassAttack = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
@@ -42,8 +40,6 @@ const stage3EastPassFlee = {
     
 }
 
-
-
 const stage2WestPass = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
@@ -58,7 +54,6 @@ const stage2WestPass = {
     
 }
 
-
 const stage2WestAttack = {
     stageLevel : 1,
     title : 'A Pirate\'s Voyage',
@@ -67,8 +62,6 @@ const stage2WestAttack = {
     choices: [],
     
 }
-
-
 
 const stage2EastPass = {
     stageLevel : 1,
@@ -118,12 +111,6 @@ const stage1West = {
     
 }
 
-const stageDetails = {
-
-
-    
-}
-
 const stage0 = {
     stageLevel : 0,
     title : 'A Pirate\'s Voyage',
@@ -135,9 +122,18 @@ const stage0 = {
     ]
 }
 
+/*---------------------------- Variables (state) ----------------------------*/
 
+let activeStage = stage0
 let stageToResetTo
 let resetButton
+
+/*------------------------ Cached Element References ------------------------*/
+
+const gameElements = document.getElementById('game') 
+
+
+/*-------------------------------- Functions --------------------------------*/
 
 
 const init = () => {
@@ -157,7 +153,7 @@ const init = () => {
     
 }
 
-
+// Render Stage:
 
 const renderStage = () => {
 
@@ -169,32 +165,19 @@ gameElements.appendChild(heading);
 const image = document.createElement('img')
 image.src = activeStage.image
 image.classList.add('stage-image')
-// image.id = "game-image";
 gameElements.appendChild(image)
 const stageImage = document.getElementById('game-image') 
-
-
-// replace image rather than just add
-// If it does replace it
-
-
 
 const paragraph = document.createElement('p');
 paragraph.textContent = activeStage.instructions
 paragraph.classList.add('stage-text');
 gameElements.appendChild(paragraph);
 
-
-
 const flexContainer = document.createElement('div');
 flexContainer.classList.add('flex-container');
 
-// const button = document.createElement('button')
-// button.textContent = buttonData.text
-// button.classList.add('stage-button');
-// flexContainer.appendChild(button)
 
-
+// Buttons:
 gameElements.appendChild(flexContainer);
 
 const renderButton = (buttonData) => {
@@ -220,40 +203,18 @@ if (activeStage.choices.length === 0) {
 // what its doing:
 // renderButton({text: 'East', nextStage: stage1East}, 0)
 // renderButton({text: 'West', nextStage: stage1West}, 1)
-
+// This data becomes buttonData
 
 }
-
-
-
-
-
-// console.log(stage0.stageLevel = 1)
-
-/*---------------------------- Variables (state) ----------------------------*/
-
-let activeStage = stage0
-
-/*------------------------ Cached Element References ------------------------*/
-
-const gameElements = document.getElementById('game') 
-
-
-
-/*-------------------------------- Functions --------------------------------*/
-
-
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 
-
+// In renderButton Function
 
 
 /*----------------------------- Runtime Code -----------------------------*/
 
 init()
 
-// activeStage = stage1
 
-// renderStage()
